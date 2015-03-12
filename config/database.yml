@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: shoes_development
+  host: localhost
+  username: shoes
+  password:
+  pool: 5
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: shoes_test
+  host: localhost
+  username: shoes
+  password:
+  pool: 5
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: shoes_production
+  host: localhost
+  username: ricolife
+  password:
+  pool: 5

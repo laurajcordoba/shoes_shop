@@ -1,0 +1,45 @@
+= form_for @article, html: { class: "form-horizontal article" } do |f|
+  - if @article.errors.any?
+    #error_expl.panel.panel-danger
+      .panel-heading
+        %h3.panel-title
+          = pluralize(@article.errors.count, "error")
+          prohibited this article from being saved:
+      .panel-body
+        %ul
+          - @article.errors.full_messages.each do |msg|
+            %li= msg
+
+  .control-group
+    = f.label :name, class: 'control-label'
+    .controls
+      = f.text_field :name, class: 'form-control'
+
+  .control-group
+    = f.label :description, class: 'control-label'
+    .controls
+      = f.text_field :description, class: 'form-control'
+
+  .control-group
+    = f.label :price, class: 'control-label'
+    .controls
+      = f.text_field :price, class: 'form-control'
+
+  .control-group
+    = f.label :total_in_shelf, class: 'control-label'
+    .controls
+      = f.text_field :total_in_shelf, class: 'form-control'
+
+  .control-group
+    = f.label :total_in_vault, class: 'control-label'
+    .controls
+      = f.text_field :total_in_vault, class: 'form-control'
+
+  .control-group
+    = f.label :store_id, class: 'control-label'
+    .controls
+      = f.select :store_id, Store.all.collect{ |e| [e.name, e.id] }, {}, {class: 'form-control'}
+  %br
+  = f.submit nil, class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+    articles_path, class: 'btn btn-default'

@@ -1,0 +1,10 @@
+#header
+  = nav_bar fixed: :top, brand: "Shoes Store", responsive: true do
+    = menu_group do
+      = menu_divider
+      = drop_down "Articles" do
+        = menu_item "List of Articles", articles_path
+        = menu_item "New Article", new_article_path
+      = drop_down "Shoes" do
+        = menu_item "List of Stores", stores_path
+        = menu_item "New Store", new_store_path
