@@ -3,5 +3,5 @@ class Store < ActiveRecord::Base
   has_many :articles
 
   # == Validations
-  validates_presence_of :name, :address
+  validates :name, :address, presence: true
 end

@@ -21,6 +21,6 @@ production:
   encoding: unicode
   database: shoes_production
   host: localhost
-  username: ricolife
+  username: shoes
   password:
   pool: 5

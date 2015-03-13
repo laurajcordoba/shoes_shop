@@ -3,5 +3,5 @@ class Article < ActiveRecord::Base
   belongs_to :store
 
   # == Validations
-  validates_presence_of :name, :store_id
+  validates :name, :store_id, presence: true
 end
