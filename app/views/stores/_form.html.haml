@@ -1,14 +1,5 @@
 = form_for @store, html: { class: "form-horizontal store" } do |f|
-  - if @store.errors.any?
-    #error_expl.panel.panel-danger
-      .panel-heading
-        %h3.panel-title
-          = pluralize(@store.errors.count, "error")
-          prohibited this store from being saved:
-      .panel-body
-        %ul
-          - @store.errors.full_messages.each do |msg|
-            %li= msg
+  = render 'errors'
 
   .control-group
     = f.label :name, class: 'control-label'
@@ -22,5 +13,4 @@
     = error_span(@store[:address])
   %br
   = f.submit nil, class: 'btn btn-primary'
-  = link_to t('.cancel', :default => t("helpers.links.cancel")), |
-    stores_path, class: 'btn btn-default'                     |
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), stores_path, class: 'btn btn-default'

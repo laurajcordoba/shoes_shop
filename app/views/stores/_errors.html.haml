@@ -1,0 +1,10 @@
+- if @store.errors.any?
+  #error_expl.panel.panel-danger
+    .panel-heading
+      %h3.panel-title
+        = pluralize(@store.errors.count, "error")
+        prohibited this store from being saved:
+    .panel-body
+      %ul
+        - @store.errors.full_messages.each do |msg|
+          %li= msg
